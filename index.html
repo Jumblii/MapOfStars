@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <meta charset="utf-8">
+    <title>Map of Stars</title>
+    <script type="text/javascript" src="../d3-celestial-master/lib/d3.min.js"></script>
+    <script type="text/javascript" src="../d3-celestial-master/lib/d3.geo.projection.min.js"></script>
+    <script type="text/javascript" src="../d3-celestial-master/celestial.min.js"></script>
+    <script src="../reimg-master\reimg.js"></script>
+    <script src="controls.js"></script>  
+     
+
+    <link rel="stylesheet" href="../d3-celestial-master/celestial.css">
+    <link rel="stylesheet"  href="styles.css">
+</head>
+
+<body>
+    <div class="container" >
+        <div id="celestial-map" style="margin-left: 2%;" ></div>
+        <div id="controls" class="control-container" >
+            <h1 style="white-space: nowrap;">Map of Stars</h1>
+            <label>Choose: </label>
+            <div><input type="checkbox" id="cLines">
+            <label for="cLines">Constellation Lines</label></div>
+            <div><input type="checkbox" id="cBorders">
+            <label for="cBorders">Constellation Borders</label> </div>
+            <div><input type="checkbox" id="cNames">
+            <label for="cNames">Constellation Full Names</label></div>
+
+            <button 
+              class = "button"
+              type="button"
+              id = "appConst"
+              onclick = "applyConst()"
+            >Apply</button>
+
+            <button 
+              class = "button"
+              type="button"
+              id = "togStarNames"
+              onclick = "togStarNames()"
+            >Toggle Star Names</button>
+
+            <dev><input type="radio" id="pSymbols" name="planets" value="pSymbols" checked="checked">
+              <label for="pSymbols">Planet Symbols</label></dev>
+            <dev><input type="radio" id="pLetters" name="planets" value="pLetters">
+              <label for="pLetters">Planet Letters</label></dev>
+            <dev><input type="radio" id="pDisks" name="planets" value="pDisks">
+              <label for="pDisks">Planet Disks</label></dev>
+            
+
+            <button
+              class="button"
+              type="button"
+              id = "togPlanets"
+              onclick = "togPlanets()"
+            >Toggle Planets</button>
+
+            <button
+              class="button"
+              type="button"
+              id = "togMilkyWay"
+              onclick = "togMilkyWay()"
+            >Toggle Milky Way</button>
+
+            <div class="tooltip">
+              <label for="datePicker">Pick a date:</label>
+              <input type="datetime-local" id="datePicker" name="datePicker">
+              <span class="tooltiptext">Idea: see what the sky looked like on your birthday</span>
+            </div>
+
+            <button
+              class="button"
+              type="button"
+              id = "changeDate()"
+              onclick = "changeDate()"
+            >Okay</button>
+
+            <button
+              class="button"
+              type="button"
+              id = "reset"
+              onclick = "download()"
+            >Download Map</button>
+
+            <label>Click the map to change location</label>
+            <div id="gMap"></div>             
+            <button
+              class="button"
+              type="button"
+              id = "reset"
+              onclick = "reset()"
+            >Reset Map</button>
+        </div>
+    </div>
+   <script type="text/javascript">
+    
+     Celestial.display(config);
+     Celestial.skyview({location:[53.4084, -2.983333]})  ;
+     
+   </script> 
+
+  <script asyns defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyACirfkVcPHiGXnKDKzlDJHZg-PqLBombU&callback=initMap&v=weekly"
+  ></script>
+
+</body>

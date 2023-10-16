@@ -1,0 +1,67 @@
+body
+    {
+        background-color: #081820;
+        color: #CDE6F5
+    }
+    .container 
+    {
+        display:flex;
+        flex-direction: row;
+        overflow: hidden;
+        margin-top: 5%;
+    }
+    .control-container
+    {
+      display: flex;
+      flex-direction: column;
+      width:max-content;
+      margin-right: 2%;
+    }
+    
+    .tooltip 
+    {
+    position: relative;
+    display: inline-block;
+    }
+
+
+    .tooltip .tooltiptext 
+    {
+    visibility: hidden;
+    width: 120px;
+    background-color: #CDE6F5;
+    color: #000000;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    }
+    .tooltiptext
+    {
+      top: -5px;
+      right: 105%;
+    }
+    .tooltip:hover .tooltiptext 
+    {
+      visibility: visible;
+    }
+.button, #datePicker
+{
+    background-color: #8DA7BE;
+    color:#081820;
+    margin:5px;
+    border: none;
+    border-radius: 5px;
+}
+.button:hover
+{
+    background-color: #707078;
+    color: #081820;
+}
+#gMap 
+{
+  height: 150px;
+  width: 150px;
+}
+
